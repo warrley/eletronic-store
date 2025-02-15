@@ -9,7 +9,6 @@ const Page = () => {
     <div className="w-full max-w-4xl mx-auto">
       <Header />
       <div className="mx-3">
-        <TabsSkeleton/>
         <Suspense fallback={<TabsSkeleton/>}>
           <ProductsTab/>
         </Suspense>
