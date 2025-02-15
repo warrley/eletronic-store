@@ -2,14 +2,21 @@
 
 import { Product } from "@/types/product"
 import { Button } from "../ui/button"
+import { useToast } from "@/hooks/use-toast"
+import { ToastAction } from "../ui/toast"
 
 type Props = {
     item: Product
 }
 
 export const ProductItem = ({ item }: Props) => {
-    const handleAddButton = () => {
+    const { toast } = useToast();
 
+    const handleAddButton = () => {
+        toast({
+            title: "Item Added",
+            description: `${item.name}`,
+        })
     }
 
     return (
