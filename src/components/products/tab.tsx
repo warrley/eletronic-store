@@ -34,11 +34,6 @@ export const ProductsTab = async () => {
             value: "laptop",
             products: products.filter(item => item.category === 'laptop')
         },
-        {
-            title: 'Monitors',
-            value: "monitor",
-            products: products.filter(item => item.category === 'monitor')
-        }
     ];
 
     return (
