@@ -4,7 +4,7 @@ Esta é uma loja ficcional de perifericos e notebooks.
 
 Clique para acessar o site -> https://eletronic-store-azure.vercel.app/
 
-## Technologies
+## Tecnologias
 
 -React
 -Next
