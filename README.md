@@ -12,5 +12,6 @@ Clique para acessar o site -> https://eletronic-store-azure.vercel.app/
 -Tailwind
 -Shadcn-ui
 
-##Autor
-warleeyfarias https://www.instagram.com/warleyfariaas/
+## Autor
+<a href="https://www.instagram.com/warleyfariaas/">Warley</a>
+
