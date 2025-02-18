@@ -4,7 +4,7 @@ import { DialogContent, Dialog, DialogHeader, DialogTitle } from "@/components/u
 import { Progress } from "@/components/ui/progress"
 import { useState } from "react";
 import { StepUser } from "@/components/checkout/step-user";
-import { StepAdress } from "@/components/checkout/step-adress";
+// import { StepAdress } from "@/components/checkout/step-adress";
 import { StepFinish } from "@/components/checkout/step-finish";
 import { CheckoutSteps} from "@/types/checkout-steps";
 
@@ -44,7 +44,7 @@ export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
                 
                 <div className="flex flex-col gap-3">
                     {step === 'user' && <StepUser setStep={setStep} />}
-                    {step === 'adress' && <StepAdress setStep={setStep} />}
+                    {/* {step === 'adress' && <StepAdress setStep={setStep} />} */}
                     {step === 'finish' && <StepFinish/>}
                 </div>
             </DialogContent>
