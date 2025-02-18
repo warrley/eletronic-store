@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 type States = {
     name: string;
-    adress: {
+    address: {
         street: string;
         number: string;
         complement?: string | undefined;
@@ -14,12 +14,12 @@ type States = {
 
 type Actions = {
     setName: (name: States["name"]) => void;
-    setAdress: (adress: States["adress"]) => void;
+    setAddress: (adress: States["address"]) => void;
 }
 
 const initalState: States = {
     name: '',
-    adress: {
+    address: {
         street: '',
         number: '',
         complement: '' ,
@@ -32,5 +32,5 @@ const initalState: States = {
 export const userCheckoutStore = create<States & Actions>()(set => ({
     ...initalState,
     setName: (name) => set(state => ({ ...state, name })),
-    setAdress: (adress) => set(state => ({ ...state, adress }))
+    setAddress: (adress) => set(state => ({ ...state, adress }))
 }));

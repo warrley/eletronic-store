@@ -26,7 +26,7 @@ export const StepUser = ({ setStep }: Props) => {
 
     const onSubmit = (value: z.infer<typeof formSchema>) => {
         setName(value.name);
-        setStep("adress");
+        setStep("address");
     }
 
     return (

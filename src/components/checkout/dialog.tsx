@@ -4,7 +4,7 @@ import { DialogContent, Dialog, DialogHeader, DialogTitle } from "@/components/u
 import { Progress } from "@/components/ui/progress"
 import { useState } from "react";
 import { StepUser } from "@/components/checkout/step-user";
-// import { StepAdress } from "@/components/checkout/step-adress";
+import { StepAddress } from "@/components/checkout/step-address";
 import { StepFinish } from "@/components/checkout/step-finish";
 import { CheckoutSteps} from "@/types/checkout-steps";
 
@@ -21,7 +21,7 @@ export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
         case "user":
             progressPct = 33;
             break;
-        case "adress":
+        case "address":
             progressPct = 66;
             break;
         case "finish":
@@ -34,9 +34,9 @@ export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>
-                        {step === 'user' && "Dados Pessoais"}
-                        {step === 'adress' && "Enderesso para entrega"}
-                        {step === 'finish' && "Envio para o WhatsApp"}
+                        {step === 'user' && "Personal Data"}
+                        {step === 'address' && "Delivery Address"}
+                        {step === 'finish' && "Send to WhatsApp"}
                     </DialogTitle>
                 </DialogHeader>
 
@@ -44,7 +44,7 @@ export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
                 
                 <div className="flex flex-col gap-3">
                     {step === 'user' && <StepUser setStep={setStep} />}
-                    {/* {step === 'adress' && <StepAdress setStep={setStep} />} */}
+                    {step === 'address' && <StepAddress setStep={setStep} />}
                     {step === 'finish' && <StepFinish/>}
                 </div>
             </DialogContent>

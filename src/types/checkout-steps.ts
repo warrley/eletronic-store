@@ -1,1 +1,1 @@
-export type CheckoutSteps = "user" | "adress" | "finish";
+export type CheckoutSteps = "user" | "address" | "finish";
