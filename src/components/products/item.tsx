@@ -24,8 +24,8 @@ export const ProductItem = ({ item }: Props) => {
 
     return (
         <div>
-            <div className="rounded-xl overflow-hidden">
-                <img src={item.image} alt={item.name}  className="w-full h-32 object-cover"/>
+            <div className="rounded-xl overflow-hidden bg-white py-3 px-1">
+                <img src={item.image} alt={item.name}  className="w-full h-32 object-contain"/>
             </div>
             <div className="mt-3 flex flex-col gap-2">
                 <p className="text-lg">{item.name}</p>
