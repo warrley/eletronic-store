@@ -1,9 +1,9 @@
 import { CheckoutSteps } from "@/types/checkout-steps"
 import { Dispatch, SetStateAction } from "react"
 import { useForm } from "react-hook-form";
-import { number, z } from 'zod';
+import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { userCheckoutStore } from "@/store/checkout-store";
+import { useCheckoutStore } from "@/store/checkout-store";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -23,7 +23,7 @@ type Props = {
 }
 
 export const StepAddress = ({ setStep }: Props) => {
-    const { address, setAddress } = userCheckoutStore(state => state);
+    const { address, setAddress } = useCheckoutStore(state => state);
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -31,7 +31,7 @@ export const StepAddress = ({ setStep }: Props) => {
     });
 
     const onSubmit = (value: z.infer<typeof formSchema>) => {
-        setAddress(value)
+        setAddress(value);
         setStep("finish");
     }
 
@@ -119,7 +119,7 @@ export const StepAddress = ({ setStep }: Props) => {
 
                 <div className="flex justify-between mt-4">
                     <Button onClick={() => setStep("user")} type="submit" variant="link">Back</Button>
-                    <Button onClick={() => onSubmit} type="submit" variant="default">Complete</Button>
+                    <Button type="submit" variant="default">Complete</Button>
                 </div>
             </form>
         </Form>

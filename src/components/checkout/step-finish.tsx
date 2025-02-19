@@ -1,10 +1,9 @@
-import { userCheckoutStore } from "@/store/checkout-store"
-import { Button } from "../ui/button";
-import Link from "next/link";
+import { useCheckoutStore } from "@/store/checkout-store"
+import { Button } from "@/components/ui/button"
 import { generateMessage } from "@/lib/generate-message";
 
 export const StepFinish = () => {
-    const { name } = userCheckoutStore(state => state);
+    const { name, address } = useCheckoutStore(state => state);
 
     const message = generateMessage();
     const linkZap = `https://wa.me/5589981157290?text=${encodeURIComponent(message)}`

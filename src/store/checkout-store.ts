@@ -29,8 +29,8 @@ const initalState: States = {
     }
 }
 
-export const userCheckoutStore = create<States & Actions>()(set => ({
+export const useCheckoutStore = create<States & Actions>()(set => ({
     ...initalState,
     setName: (name) => set(state => ({ ...state, name })),
-    setAddress: (adress) => set(state => ({ ...state, adress }))
+    setAddress: (address) => set(state => ({ ...state, address })),
 }));

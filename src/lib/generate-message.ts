@@ -1,8 +1,8 @@
 import { useCartStore } from "@/store/cart-store"
-import { userCheckoutStore } from "@/store/checkout-store"
+import { useCheckoutStore } from "@/store/checkout-store"
 
 export const generateMessage = () => {
-    const { name, address } = userCheckoutStore(state => state);
+    const { name, address } = useCheckoutStore(state => state);
     const { cart } = useCartStore(state => state);
 
     let orderProducts = [];
@@ -10,11 +10,11 @@ export const generateMessage = () => {
         orderProducts.push(`${item.quantity}x ${item.product.name}`)
     }
 
-    return `**Dados do cliente:**
+    return `*Client Data:*
 Name: ${name}
 Address: ${address.street}, ${address.number}, (${address.complement})
 ${address.district}, ${address.city}/${address.state}
 ---------
-**Order:** 
+*Order:* 
 ${orderProducts.join("\n")}`; 
 }
